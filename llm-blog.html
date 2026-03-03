@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Learning LLMs Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    header {
+      background: radial-gradient(circle at top left, #22d3ee, #4f46e5 45%, #020617 75%);
+      color: white;
+      padding: 1.8rem 0 2.2rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .site-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+    .site-subtitle {
+      font-size: 0.95rem;
+      color: #e0f2fe;
+      max-width: 32rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .post {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 0.9rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
+    }
+    .post-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .post-meta {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: center;
+    }
+    .post-excerpt {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      margin-bottom: 0.75rem;
+    }
+    .read-more {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #38bdf8;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      color: #7dd3fc;
+      margin-right: 0.3rem;
+    }
+
+    aside {
+      position: sticky;
+      top: 1.5rem;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 0.9rem;
+      padding: 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      margin-bottom: 1.25rem;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: conic-gradient(from 180deg, #22d3ee, #a855f7, #4f46e5, #22d3ee);
+      box-shadow: 0 0 0 2px #020617;
+    }
+    .tag-list a {
+      display: inline-block;
+      margin: 0.15rem 0.25rem 0.15rem 0;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      color: #cbd5f5;
+    }
+
+    input, button {
+      font-family: inherit;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0 2.5rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      aside {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="site-title">Learning LLMs</div>
+      <div class="site-subtitle">
+        A simple blog by <strong>benjm</strong> documenting my journey learning large language models, prompt engineering, and practical AI tools.
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="layout">
+      <!-- Main posts -->
+      <section aria-label="Blog posts">
+        <article class="post">
+          <div class="post-meta">
+            <span class="badge">Foundations</span>
+            <span>March 2, 2026 · 6 min read</span>
+          </div>
+          <h2 class="post-title">What Is a Large Language Model, Really?</h2>
+          <p class="post-excerpt">
+            Everyone says “LLM” these days, but what does it actually mean in practice?
+            In this post, I explain LLMs in plain language, from tokens and training data
+            to why they sometimes hallucinate.
+          </p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+
+        <article class="post">
+          <div class="post-meta">
+            <span class="badge">Prompting</span>
+            <span>February 20, 2026 · 4 min read</span>
+          </div>
+          <h2 class="post-title">My First 10 Prompting Lessons</h2>
+          <p class="post-excerpt">
+            I used the same model with different prompts and got very different results.
+            Here are ten small prompting tricks that gave me more consistent, useful answers
+            without changing the model at all.
+          </p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+
+        <article class="post">
+          <div class="post-meta">
+            <span class="badge">Projects</span>
+            <span>February 5, 2026 · 5 min read</span>
+          </div>
+          <h2 class="post-title">Building a Tiny LLM-Powered App</h2>
+          <p class="post-excerpt">
+            To really understand LLMs, I built a tiny app that summarizes articles and drafts emails.
+            I walk through the API calls, cost control, and the mistakes I made along the way.
+          </p>
+          <a href="#" class="read-more">Read more →</a>
+        </article>
+      </section>
+
+      <!-- Sidebar -->
+      <aside>
+        <section class="card">
+          <h3>About this blog</h3>
+          <div class="profile">
+            <div class="avatar"></div>
+            <div>
+              <div style="font-weight:600;">benjm</div>
+              <div style="font-size:0.8rem; color:#9ca3af;">LLM learner & builder</div>
+            </div>
+          </div>
+          <p>
+            I’m learning how large language models work by reading papers,
+            building small projects, and taking notes in public.
+            Expect practical explanations, simple examples, and plenty of experiments.
+          </p>
+        </section>
+
+        <section class="card">
+          <h3>Topics I write about</h3>
+          <div class="tag-list">
+            <a href="#">#llm-basics</a>
+            <a href="#">#prompt-engineering</a>
+            <a href="#">#rag</a>
+            <a href="#">#open-source-models</a>
+            <a href="#">#ai-tools</a>
+            <a href="#">#experiments</a>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Start here</h3>
+          <p style="margin-bottom:0.4rem;">New to LLMs? Read this order:</p>
+          <ol style="padding-left:1.1rem; font-size:0.86rem; color:#cbd5f5;">
+            <li>What is a Large Language Model?</li>
+            <li>My First 10 Prompting Lessons</li>
+            <li>Building a Tiny LLM-Powered App</li>
+          </ol>
+        </section>
+
+        <section class="card">
+          <h3>Subscribe</h3>
+          <p>Get new LLM learning notes in your inbox:</p>
+          <form onsubmit="event.preventDefault(); alert('Demo only — connect a real email service here.');">
+            <input
+              type="email"
+              placeholder="you@example.com"
+              required
+              style="width:100%; padding:0.5rem 0.75rem; margin:0.5rem 0; border-radius:0.5rem; border:1px solid #4b5563; background:#020617; color:#e5e7eb; font-size:0.9rem;"
+            />
+            <button
+              type="submit"
+              style="width:100%; padding:0.55rem 0.75rem; border-radius:0.5rem; border:none; background:#38bdf8; color:#020617; font-size:0.9rem; font-weight:600; cursor:pointer;"
+            >
+              Subscribe
+            </button>
+          </form>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Learning LLMs by benjm. Built with plain HTML & CSS.
+  </footer>
+</body>
+</html>
